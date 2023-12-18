@@ -17,6 +17,8 @@ class Control:
                 return f'{num1} * {num2} = {self.mul(num1, num2)}'
             elif operator == '^':
                 return f'{num1} ^ {num2} = {self.pow(num1, num2)}'
+            elif operator == '%':
+                return f'{num1} % {num2} = {self.mod(num1, num2)}'
             else:
                 return "Calculation Error"
         except:
@@ -37,6 +39,13 @@ class Control:
         return a*b
 
     def div(self, a, b):
+        try:
+            if (b == 0):
+                raise Exception("Divisor Error")
+
+        except Exception as e:
+            return e
+
         return a/b
 
     def div(self, a, b):
